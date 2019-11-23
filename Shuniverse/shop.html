@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sneaker-Box (Shop)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+<link href="main.css" rel="stylesheet" type="text/css" />
+
+
+<script type="text/javascript" src="js/jquery.min.js">
+</script>
+
+<script type="text/javascript" src="js/ddsmoothmenu.js">
+</script>
+
+<script type="text/javascript">
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' 
+	rel='stylesheet' type='text/css'>
+
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+
+<link rel="stylesheet" href="css/style.css">
+	  
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+<script>
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "top_nav", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+</script>
+
+<script>
+	 $(document).ready(function() {
+   $(".accordion2 .accord-header").click(function() {
+     // For active header definition
+     $('.accord-header').removeClass('on');
+     $(this).addClass('on');
+     
+     // Accordion actions
+     if($(this).next("div").is(":visible")){
+       $(this).next("div").slideUp(400);
+       $(this).removeClass('on');
+     } else {
+       $(".accordion2 .accord-content").slideUp(400);
+       $(this).next("div").slideToggle(400);
+     }
+  });
+});	
+</script>
+</head>
+
+
+<body>
+<!-- CONTAINER -->
+<div id="container">
+
+
+<!-- HEADER -->
+	<div id="header">
+		<a href="Home.html"><img src="images/company_logo.png" alt="sneakerbox.co logo" class="center"></a>
+        <div id="header_right">
+        	<p>
+	        <a href="#">My Cart</a> | <a href="#">Checkout</a> | <a href="#">Log In</a></p>
+            <p>
+            	Shopping Cart: <strong>0 items</strong> ( <a href="shoppingcart.html">Show Cart</a> )
+			</p>
+		</div>
+        <div class="cleaner"></div>
+		
+	</div> <!-- END of header -->
+	
+	<!-- NAVBAR -->
+	<nav id="navbar">
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="shop.html">Shop</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="faq.html">FAQ</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="index.php">Forum</a></li>
+		</ul>
+		
+	</nav> <!-- END of navbar -->
+
+	
+	
+	<div style="width:20%; height:400px; margin-top:100px; margin-left:30px; background-color:#F5F5F5;"><br>
+		<p style=" text-align:center;">CATEGORIES</P>
+		
+		<div class="accordion2">
+		  <div class="accord-header">Brand <span style="margin-left:160px; color:grey;"> &#x25BC;</span></div>
+		  <div class="accord-content">
+			<div>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">ADIDAS</label>
+				</input><br>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">AIR JORDAN</label>
+				</input><br>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">ASICS</label>
+				</input><br>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">NIKE</label>
+				</input><br>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">VANS</label>
+				</input><br>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">NEW BALANCE</label>
+				</input><br>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">SAUCONY</label>
+				</input><br>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">PUMA</label>
+				</input>
+			</div>	
+		  </div>
+		  <div class="accord-header">Gender <span style="margin-left:150px; color:grey;"> &#x25BC;</span></div>
+		  <div class="accord-content">
+			<div>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">Male</label>
+				</input><br>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">Female</label>
+				</input><br>
+			</div>
+		  </div>
+		  <div class="accord-header">Price <span style="margin-left:168px; color:grey;"> &#x25BC;</span></div>
+		  <div class="accord-content">
+		    <div>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">$0-$200</label>
+				</input><br>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">$200-$400</label>
+				</input><br>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">$400-$600</label>
+				</input><br>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">$600-$800</label>
+				</input><br>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">$800-$1000</label>
+				</input><br>
+				<input id="wb" type="checkbox" />
+				<label for="wb" id="somelabel">Over +$1000</label>
+				</input><br>
+			</div>
+		   </div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	<div style="margin-left:400px; margin-right:20px; margin-top:-500px;">
+	<h3>SHOP</h3>
+	<!-- Main -->
+		<section id="main">
+					
+						<!-- Thumbnails -->
+							<section class="thumbnails">
+								<div>
+									<a href="">
+										<img src="images/nike-kobe elite.jpg" alt="" /><br>
+										<p style="display:inline-block; font-size:25px;">NIKE<br>KOBE 10 ELITE SE "WHAT THE KOBE"</p><br><br>
+										<p style="display:inline-block; margin-bottom:10px;">$ 275</p>
+									</a>
+									<a href="">
+										<img src="images/air1.jpg" alt="" /><br>
+										<p style="display:inline-block; font-size:25px;">Air Jordan<br>AIR JORDAN 1 RETRO HIGH OG "CHICAGO"</p><br><br>
+										<p style="display:inline-block; margin-bottom:10px;">$ 550</p>
+									</a>
+									<a href="">
+										<img src="images/powerphase.jpg" alt="" /><br>
+										<p style="display:inline-block; font-size:25px;">ADIDAS<br>YEEZY POWERPHASE "CALABASAS"</p><br><br>
+										<p style="display:inline-block; margin-bottom:10px;">$ 430</p>
+									</a>
+								</div>
+								<div>
+									<a href="">
+										<img src="images/nike-kobe 6.png" alt="" /><br>
+										<p style="display:inline-block; font-size:25px;">NIKE<br>KOBE 6 "PRELUDE 6"</p><br><br>
+										<p style="display:inline-block; margin-bottom:10px;">$ 200</p>
+									</a>
+									<a href="">
+										<img src="images/ultraboost-pride.jpg" alt="" /><br>
+										<p style="display:inline-block; font-size:25px;">ADIDAS<br>ULTRA BOOST PRIDE "PRIDE"</p><br><br>
+										<p style="display:inline-block; margin-bottom:10px;">$ 250</p>
+									</a>
+									<a href="">
+										<img src="images/vans-fog.jpg" alt="" /><br>
+										<p style="display:inline-block; font-size:25px;">VANS<br>ERA 95 REISSUE "(FOG) FEAR OF GOD"</p><br><br>
+										<p style="display:inline-block; margin-bottom:10px;">$ 1,000</p>
+									</a>
+								</div>
+								<div>
+									<a href="">
+										<img src="images/yeezy-boost-750.jpg" alt="" /><br>
+										<p style="display:inline-block; font-size:25px;">ADIDAS<br>YEEZY BOOST 750</p><br><br>
+										<p style="display:inline-block; margin-bottom:10px;">$ 1,200</p>
+									</a>
+									<a href="">
+										<img src="images/cement-4.jpg" alt="" /><br>
+										<p style="display:inline-block; font-size:25px;">AIR JORDAN<br>AIR JORDAN 4 RETRO OG "WHITE CEMENT 2016 RELEASE"</p><br><br>
+										<p style="display:inline-block; margin-bottom:10px;">$ 375</p>
+									</a>
+									<a href="">
+										<img src="images/new-balance.jpg" alt="" /><br>
+										<p style="display:inline-block; font-size:25px;">NEW BALANCE<br>M997.5 "THE CYCLADES"</p><br><br>
+										<p style="display:inline-block; margin-bottom:10px;">$ 325</p>
+									</a>
+								</div>	
+							</section>
+		</section>
+	</div>
+
+	
+	
+	<div style="clear:both;"></div>
+	
+	<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<a href="Home.html"><img src="images/company_logo.png" alt="sneakerbox.co logo">
+
+				<p class="footer-links">
+					<a href="home.html">Home</a>&nbsp;
+					|&nbsp;
+					<a href="contact.html">Contact</a>&nbsp;
+					|&nbsp;
+					<a href="about.html">About</a>&nbsp;
+					|&nbsp;
+					<a href="faq.html">Faq</a>&nbsp;
+					|&nbsp;
+					<a href="shop.html">Shop</a>
+				</p>
+				
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>12666 72 Ave, Surrey, BC V3W 2M8</span> Surrey, BC, Canada</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p><a href="tel:1-604-599-2000">+1 (604) 599-2000</a></p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="contact.html">support@SneakerBox.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About the company</span>
+					To tie the various facets of HYPEBEAST together is our online 
+					store. Since SNEAKERBOX's inception, an appreciation for fashion
+					and product has been fundamental to our vision. An online store 
+					has given visitors the opportunity to conveniently shop and purchase
+					some of our favourite sneaker brands.
+				</p>
+
+				<div class="footer-icons">
+					
+					<a href="https://www.facebook.com/sneakerboxmonthly/?hc_ref=PAGES_TIMELINE" target="_blank"><img src="images/fac.ico" width="20px" height="20px" hspace="10" vspace="10"></a>
+					
+					<a href="https://twitter.com/sneakerboxco?lang=en" target="_blank"><img src="images/twit.ico" width="20px" height="20px" hspace="10" vspace="10"></a>
+					
+					<a href="https://www.instagram.com/sneakerboxco/?hl=en" target="_blank"><img src="images/ins.ico" width="20px" height="20px" hspace="10" vspace="10"></a>
+					
+				</div>
+
+			</div>
+		
+	</footer>
+	
+
+	<p class="footer-company-name">SneakerBox Co &copy; 2018</p>
+
+</div> <!-- END of container -->
+</body>
+</html>
