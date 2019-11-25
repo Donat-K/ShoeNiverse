@@ -21,21 +21,21 @@ CREATE TABLE Description (
 
 CREATE TABLE ImagePath (
     imagePathID INT AUTO_INCREMENT,
-    imagePath(VARCHAR1000),
+    imagePath VARCHAR(1000),
     PRIMARY KEY (imagePathID)
 );
 
 CREATE TABLE Shoe (
     shoeID INT AUTO_INCREMENT NOT NULL,
     modelID INT NOT NULL,
-    descriptionID VARCHAR(1000) NOT NULL,
-    makeID NOT NULL,
-    imagePathID NOT NULL,
+    descriptionID INT NOT NULL,
+    makeID INT NOT NULL,
+    imagePathID INT NOT NULL,
     isReleased BOOLEAN NOT NULL,
     PRIMARY KEY (shoeID),
     FOREIGN KEY (modelID) REFERENCES Model(modelID),
     FOREIGN KEY (makeID) REFERENCES Make(makeID),
-    FOREIGN KEY (descriptionID) REFERENCES Description(decsriptionID),
+    FOREIGN KEY (descriptionID) REFERENCES Description(descriptionID),
     FOREIGN KEY (imagePathID) REFERENCES ImagePath(imagePathID)
 );
 
@@ -62,7 +62,7 @@ INSERT INTO Make VALUES
 (4, "Nike");
 
 INSERT INTO Model VALUES
-(1, "Yeezy 500 \'Stone\'")
+(1, "Yeezy 500 \'Stone\'"),
 (2, "4 \'What The\'"),
 (3, "React Element 55"),
 (4, "Air Force 1"),
@@ -75,14 +75,16 @@ INSERT INTO Description VALUES
 (4, "The South Korean entertainment industry — even despite its overwhelming spike in popularity the past few years — almost never intersects with the world of sneakers, and with its arguable heyday barren of any collaborations of their own, it’s a welcome sight to see its once indefinite dry spell broken by one of the most legendary: G-Dragon. Born for stardom and a product of near exhaustive idol training, the Big Bang leader has become a style icon through and through with an upcoming Nike collaboration further immortalizing his lengthy, accolade-ridden career. The Air Force 1 “Para-Noise” is almost entirely exemplary of his own personality and taste through a canvas already known as one of his key favorites; uppers, dyed with a loosely adhered paint, wears off to reveal an artwork of his own design, one that mirrors the motifs of the similarly adorned insole graphic. Swooshes, midsoles, as well as the lining are left colorless with few embellishments, leavening some of the artist’s trademarks like his own PEACEMINUSONE insignia as well as some paint streaks along the bottom. Grab one more look at the pair right here and take a look at our store list below to help secure your pair this Saturday, November 23rd."),
 (5, "A silhouette that possesses a new and improved form of the brand’s ZigTech technology from 2010, the Reebok Zig Kinetica enters the performance space today to compete with the industry’s most notable cushioning systems. First debuted only but a couple of weeks ago, low-profile model is now adding another makeover to its lineup, leaning on primarily black color-blocking panels to stylize its upper. Arriving as somewhat of an inverted version of its original colorway, this upcoming offering wraps its mid to forefoot layers in pitch black hues, and adheres to bone white, lilac, and grey/teal accents to decorate the additional abstract overlays. In addition, the Zig-infused midsoles now present themselves in split-toned fashion, followed by a snowy white strap that buckles your foot across the middle for extra support. Take a closer look at the pair here below, and find these dropping at select Reebok retailers in December 6th for $180 USD.");
 
+INSERT INTO ImagePath VALUES
+(1, "TEST");
+
 INSERT INTO Shoe
-VALUES (1, 1, 1, 2, 1);
+VALUES (1, 1, 1, 2, 1, 1);
 
 INSERT INTO Video VALUES
 (1, "https://www.youtube.com/watch?v=rkylzWPnMaw", "1");
 
 INSERT INTO Buy VALUES
 (1, "https://www.adidas.com/us/yeezy?clickId=wByUhY0%3A6TiUURPzPsQFpwraUkn16b1J3wHwyk0&irgwc=1&cm_mmc=AdieAffiliates_IR-_-Sneaker%20News%20Inc-_-deeplink-_-TEXT_LINK-_-&cm_mmc2=adidas-NA-eCom-Affiliates-_-Sneaker%20News%20Inc-_-None-None-US-always-on-None-1801", 1);
-
 
 
