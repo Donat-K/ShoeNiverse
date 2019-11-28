@@ -1,6 +1,11 @@
 DROP DATABASE IF EXISTS ShoeDatabase;
 CREATE DATABASE ShoeDatabase;
 
+GRANT SELECT, INSERT, DELETE, UPDATE
+ON ShoeDatabase.*
+TO user@localhost
+IDENTIFIED BY 'password';
+
 CREATE TABLE Make (
     makeID INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(100) NOT NULL,
@@ -65,7 +70,7 @@ INSERT INTO Model VALUES
 (1, "Yeezy 500 \'Stone\'"),
 (2, "4 \'What The\'"),
 (3, "React Element 55"),
-(4, "Air Force 1"),
+(4, "Air Force 1 \'Para-Noise\'"),
 (5, "Zig Kinetica");
 
 INSERT INTO Description VALUES
@@ -76,15 +81,31 @@ INSERT INTO Description VALUES
 (5, "A silhouette that possesses a new and improved form of the brand’s ZigTech technology from 2010, the Reebok Zig Kinetica enters the performance space today to compete with the industry’s most notable cushioning systems. First debuted only but a couple of weeks ago, low-profile model is now adding another makeover to its lineup, leaning on primarily black color-blocking panels to stylize its upper. Arriving as somewhat of an inverted version of its original colorway, this upcoming offering wraps its mid to forefoot layers in pitch black hues, and adheres to bone white, lilac, and grey/teal accents to decorate the additional abstract overlays. In addition, the Zig-infused midsoles now present themselves in split-toned fashion, followed by a snowy white strap that buckles your foot across the middle for extra support. Take a closer look at the pair here below, and find these dropping at select Reebok retailers in December 6th for $180 USD.");
 
 INSERT INTO ImagePath VALUES
-(1, "TEST");
+(1, "\/images\/shoes\/1"),
+(2, "\/images\/shoes\/2"),
+(3, "\/images\/shoes\/3"),
+(4, "\/images\/shoes\/4"),
+(5, "\/images\/shoes\/5");
 
-INSERT INTO Shoe
-VALUES (1, 1, 1, 2, 1, 1);
+INSERT INTO Shoe VALUES
+(1, 1, 1, 2, 1, 1),
+(2, 2, 2, 3, 2, 1),
+(3, 3, 3, 4, 4, 0),
+(4, 4, 4, 4, 4, 1),
+(5, 5, 5, 1, 5, 1);
 
 INSERT INTO Video VALUES
-(1, "https://www.youtube.com/watch?v=rkylzWPnMaw", "1");
+(1, "https:\/\/www.youtube.com\/watch?v=rkylzWPnMaw", 1),
+(2, "https:\/\/www.youtube.com\/watch?v=jB8iXfCCf0U&feature=emb_title", 2),
+(3, "https:\/\/www.youtube.com\/watch?v=kHNoanNm9W4&feature=emb_title", 4),
+(4, "https:\/\/www.youtube.com\/watch?v=tWt6JZWfVxA", 5);
 
 INSERT INTO Buy VALUES
-(1, "https://www.adidas.com/us/yeezy?clickId=wByUhY0%3A6TiUURPzPsQFpwraUkn16b1J3wHwyk0&irgwc=1&cm_mmc=AdieAffiliates_IR-_-Sneaker%20News%20Inc-_-deeplink-_-TEXT_LINK-_-&cm_mmc2=adidas-NA-eCom-Affiliates-_-Sneaker%20News%20Inc-_-None-None-US-always-on-None-1801", 1);
+(1, "https:\/\/www.adidas.com\/us\/yeezy?clickId=wByUhY0%3A6TiUURPzPsQFpwraUkn16b1J3wHwyk0&irgwc=1&cm_mmc=AdieAffiliates_IR-_-Sneaker%20News%20Inc-_-deeplink-_-TEXT_LINK-_-&cm_mmc2=adidas-NA-eCom-Affiliates-_-Sneaker%20News%20Inc-_-None-None-US-always-on-None-1801", 1),
+(2, "https:\/\/www.nike.com\/ca\/launch\/t\/air-jordan-4-retro-what-the", 2),
+(3, "https:\/\/www.nike.com\/ca\/launch\/t\/air-force-1-para-noise-black", 4),
+(4, "https:\/\/www.reebok.ca\/en\/zig_kinetica", 5);
 
-
+--SELECT Make.name, Model.name, Description.description, ImagePath.imagePath, Video.videoLink, Buy.buyLink
+--FROM Shoe
+--INNER JOIN
