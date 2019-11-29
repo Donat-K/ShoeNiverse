@@ -90,7 +90,7 @@ INSERT INTO ImagePath VALUES
 INSERT INTO Shoe VALUES
 (1, 1, 1, 2, 1, 1),
 (2, 2, 2, 3, 2, 1),
-(3, 3, 3, 4, 4, 0),
+(3, 3, 3, 4, 3, 0),
 (4, 4, 4, 4, 4, 1),
 (5, 5, 5, 1, 5, 1);
 
@@ -106,6 +106,12 @@ INSERT INTO Buy VALUES
 (3, "https:\/\/www.nike.com\/ca\/launch\/t\/air-force-1-para-noise-black", 4),
 (4, "https:\/\/www.reebok.ca\/en\/zig_kinetica", 5);
 
---SELECT Make.name, Model.name, Description.description, ImagePath.imagePath, Video.videoLink, Buy.buyLink
---FROM Shoe
---INNER JOIN
+SELECT Make.name AS make, Model.name AS model, Description.description, ImagePath.imagePath, Video.videoLink, Buy.buyLink
+FROM Shoe
+INNER JOIN Make ON Shoe.makeID = Make.makeID
+INNER JOIN Model ON Shoe.modelID = Model.modelID
+INNER JOIN Description ON Description.descriptionID = Shoe.descriptionID
+INNER JOIN ImagePath ON ImagePath.imagePathID = Shoe.imagePathID
+LEFT JOIN Video ON Video.shoeID = Shoe.shoeID
+LEFT JOIN Buy ON Buy.shoeID = Shoe.shoeID
+
