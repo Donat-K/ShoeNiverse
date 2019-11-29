@@ -1,5 +1,7 @@
 <?php
 	require('./databases/database.php');
+
+	$shoeID = 1;
 ?>
 <!DOCTYPE html>
 <html>
@@ -66,22 +68,20 @@
 
 	<div style="width:60%">
 	<p style="margin-left:40px; font-size:30px; color: #00AFDB;  margin-bottom: 30px; text-transform: uppercase; margin-top:40px; ">Shoes</p>
+<?php
+			$query = 'SELECT imagePath FROM imagePath
+			WHERE imagePathID = 1';
+			$results = $db->query($query); // $products is a PDOStatement object
+			$result = $results->fetch();
+ ?>
+ <!-- <img src="<?php echo $result; ?>" alt="sneakerbox.co logo" class="center"> -->
+
 
 	<!--<img src="images/company_logo2.png" ALIGN="left" alt="Shoe Picture" style="width:400px;height:150px;" hspace="20">
 	-->
-	<p style="font-size:16px; margin-left: 40px;"> Shoe Description<br><br>
-		<?php
-					$query = 'SELECT *
-										FROM description
-										WHERE descriptionID = 1';
-					$products = $db->query($query); // $products is a PDOStatement object
-					$product = $products->fetch();
-					foreach ($products as $product) {
-					echo $product['name'];
-					}
 
-		?>
-	</p>
+
+
 
 
 
@@ -89,14 +89,44 @@
 
 	<div style="width:70%">
 	<h1 style="margin-left:40px; color: #00AFDB; font-size:30px;  margin-bottom: 30px; text-transform: uppercase; margin-top:40px; ">Shoe Description</h1>
+	<p style="font-size:16px; margin-left: 40px;">
+	<?php
+				$query = 'SELECT description FROM description
+				WHERE descriptionID = 1';
+				$results = $db->query($query); // $products is a PDOStatement object
+				$result = $results->fetch();
+				echo $result['description'];
 
-
+	?>
+</p>
 	</div>
 
+		<h1 style="margin-left:40px; color: #00AFDB; font-size:30px;  margin-bottom: 30px; text-transform: uppercase; margin-top:40px; ">Where to buy?</h1>
+		<p style="font-size:16px; margin-left: 40px;">
+		<?php
+					$query = 'SELECT buyLink FROM buy
+					WHERE buyID = 1';
+					$results = $db->query($query); // $products is a PDOStatement object
+					$result = $results->fetch();
+					echo $result['buyLink'];
+
+		?>
 
 	<hr style="width:90%; border: 0.4px solid #CCCCCC">
 	<br>
 	<h1 id="side"> Videos</h1><br>
+
+	<?php
+	$query = 'SELECT videoLink FROM Video
+	WHERE videoID = 1';
+	$results = $db->query($query); // $products is a PDOStatement object
+	$result = $results->fetch();;
+	 ?>
+<a href="<?php echo $result['videoLink'] ?>" target="_blank" > blah blah
+</a>
+<!--	<iframe width="250px"  height="180px" src="<?php// echo $result ?>"
+	frameborder="0" float="left" allowfullscreen>
+-->
 
 	<br>
 	<hr style="width:90%; border: 0.4px solid #CCCCCC">
