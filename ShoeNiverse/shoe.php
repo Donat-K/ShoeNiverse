@@ -35,13 +35,13 @@
 <div id="container">
 
 	<!-- HEADER -->
-	<div id="header"><!--
+	<div id="header">
 		<a href="Home.html"><img src="images/company_logo.png" alt="sneakerbox.co logo" class="center"></a>
         <div id="header_right">
         	<p>
-	        <a href="#">My Cart</a> | <a href="#">Checkout</a> | <a href="#">Log In</a></p>
 
-		</div> -->
+
+		</div>
         <div class="cleaner"></div>
 
 	</div> <!-- END of header -->
@@ -50,11 +50,11 @@
 	<nav id="navbar">
 		<ul>
 			<li><a href="home.html">Home</a></li>
-
+			<li><a href="gallery.html">Gallery</a></li>
 			<li><a href="contact.html">Contact</a></li>
 			<li><a href="faq.html">FAQ</a></li>
 			<li><a href="about.html">About</a></li>
-			<li><a href="index.php">Forum</a></li>
+
 		</ul>
 
 	</nav> <!-- END of navbar -->
@@ -71,21 +71,20 @@
 	-->
 	<p style="font-size:16px; margin-left: 40px;"> Shoe Description<br><br>
 		<?php
-//			$query = 'SELECT * FROM Make';
-//			$statement = $db->prepare($query);
-//			$statement->execute();
-//			$make = $statement->fetchAll();
-//			$statement->closeCursor();
-//			echo $make['makeID'];
+					$query = 'SELECT *
+										FROM description
+										WHERE descriptionID = 1';
+					$products = $db->query($query); // $products is a PDOStatement object
+					$product = $products->fetch();
+					foreach ($products as $product) {
+					echo $product['name'];
+					}
 
-			$query = 'SELECT * FROM Make';
-			$products = $db->query($query); // $products is a PDOStatement object
-			$product = $products->fetch();
-			foreach ($products as $product) {
-			echo $product['name'];
-			}
 		?>
 	</p>
+
+
+
 	</div>
 
 	<div style="width:70%">
@@ -114,13 +113,15 @@
 				<p class="footer-links">
 					<a href="home.html">Home</a>&nbsp;
 					|&nbsp;
+					<a href="gallery.html">Gallery</a>&nbsp;
+					|&nbsp;
 					<a href="contact.html">Contact</a>&nbsp;
 					|&nbsp;
 					<a href="about.html">About</a>&nbsp;
 					|&nbsp;
 					<a href="faq.html">Faq</a>&nbsp;
 					|&nbsp;
-					<a href="shop.html">Shop</a>
+
 				</p>
 
 			</div>
